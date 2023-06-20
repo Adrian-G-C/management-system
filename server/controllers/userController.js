@@ -56,3 +56,16 @@ exports.find = (req, res) => {
       console.log('The data from user table: \n', rows);
     });
   }
+
+  // Edit user
+exports.edit = (req, res) => {
+    // User the connection
+    connection.query('SELECT * FROM user WHERE id = ?', [req.params.id], (err, rows) => {
+      if (!err) {
+        res.render('edit-user', { rows });
+      } else {
+        console.log(err);
+      }
+      console.log('The data from user table: \n', rows);
+    });
+  }
