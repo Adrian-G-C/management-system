@@ -20,7 +20,13 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Template Engine
-app.engine('hbs', exphbs( {extname: '.hbs' }));
-app.set('view engine', 'hbs');
+const handlebars = exphbs.create({ extname: '.hbs',});
+app.engine('.hbs', handlebars.engine);
+app.set('view engine', '.hbs');
+
+//Router
+app.get('', (req, res) => {
+    res.render('home');
+});
 
 app.listen(port, () => console.log(`Listening on port ${3003}`));
