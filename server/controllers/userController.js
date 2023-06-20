@@ -18,3 +18,18 @@ exports.view = (req, res) => {
     }); 
 });
 }
+
+// Find User by Search
+exports.find = (req, res) => {
+    let searchTerm = req.body.search;
+    // User the connection
+    connection.query('SELECT * FROM user WHERE first_name LIKE ? OR last_name LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
+      connection.release();
+        if (!err) {
+        res.render('home', { rows });
+      } else {
+        console.log(err);
+      }
+      console.log('The data from user table: \n', rows);
+    });
+  }
