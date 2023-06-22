@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 3306;
 
 // Parsing middleware
 // Pars application/x-wwww-form-urlencoded
