@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3005;
 
 // Parsing middleware
 // Pars application/x-wwww-form-urlencoded
@@ -42,4 +42,4 @@ pool.getConnection((err, connection) => {
 const routes = require('./server/routes/user');
 app.use('/', routes);
 
-app.listen(port, () => console.log(`Listening on port ${3003}`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
