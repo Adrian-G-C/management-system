@@ -2,6 +2,10 @@
   "name": "nodejs-usermanagement",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "npm":"9.6.6",
+    "node":"16"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
